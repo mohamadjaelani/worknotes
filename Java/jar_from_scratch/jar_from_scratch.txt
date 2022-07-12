@@ -1,0 +1,31 @@
+the steps:
+1. compile java code into byte code (class) using : $ javac JavaCode.java
+2. create jar package with based on needs:
+	using default:
+	- jar cf Result.jar com/uncal/dt/*.class
+	
+	setting the Main class. this command will create MANIFEST file in jar packaage.
+	
+	[command] [option] [jar_file_name] [Class_file_containts_main_method] [class_file]
+	- jar       cfe     Result.jar    com.uncal.dt.Result      com/uncal/dt/*.class
+	
+	use this command to update a jar file if there is any changes on its class
+	- jar uf Result.jar com/uncal/dt/Main.class
+	
+how to use :
+java code/class in latihan directory
+
+	package latihan;
+	public class Main{
+		public static void main(String[] args) {\n" +
+			System.out.println(\"Hello world, ini saya\");\n" +
+		}
+	}
+
+save as Main.java, then compile using:
+	path_to_ojdk_bin\javac ./latihan/Main.java
+then create jar using
+	path_to_ojdk_bin\jar cfe ./latihan/Hasil.jar latihan ./latihan/Main.class
+run jar using 
+	path_to_ojdk_bin\java -jar -Hasil.jar
+
