@@ -1,4 +1,5 @@
 
+select Now();
 -- SELECT SUBSTRING_INDEX('Mohamad- -Jaelani- -albogori- -programmer- -java- -delapan', '- -', 1) AS fname
 -- execute siberger('jaelani')
 -- create procedure siberger( IN parseData varchar(100))
@@ -13,12 +14,12 @@ SELECT REPLACE("SQL Tutorial", "Tut", "HTML");
 SELECT REPLACE("Kolom1<:>NilaiKolom1", "<;>", "");
 SELECT SUBSTRING_INDEX('Kolom1<:>NilaiKolom1<;>Kolom2<:>NilaiKolom2<;>Kolom3<:>NilaiKolom3<;>Kolom4<:>NilaiKolom4', '<;>', 2) AS fname;
 SELECT SUBSTRING_INDEX('<;>Kolom2<:>NilaiKolom2<;>Kolom3<:>NilaiKolom3<;>Kolom4<:>NilaiKolom4', '<;>', 1) AS fname;
-call siberger('TEST001','Column1<:>NilaiKolom1<;>Column2<:>NilaiKolom2<;>Column3<:>NilaiKolom3<;>Column4<:>NilaiKolom4<;>Column5<:>NilaiKolom5');
+call siberger('TEST001','Column1<:>NilaiKolom1<;>Column2<:>NilaiKolom2<;>Column3<:>NilaiKolom3<;>Column4<:>NilaiKolom4<;>Column5<:>NilaiKolom5',@hasil);
 
 -- drop procedure siberger;
 
 DELIMITER $$
-	create procedure siberger( IN namaTable varchar(100),IN parseData Text)
+	create procedure siberger( IN namaTable varchar(100),IN parseData Text, OUT hasil varchar(100))
     BEGIN
     /************************************************************************
     ************************** Untuk Alinur Shihab***************************
@@ -57,5 +58,6 @@ DELIMITER $$
         prepare persiapan from @hasilnya;
         execute persiapan;
         deallocate prepare persiapan;
+        select Now() into hasil;
     END $$
 DELIMITER ;
