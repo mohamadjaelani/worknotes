@@ -14,6 +14,22 @@
         private LocalDate dob;
         private int age;
         
+		public Student() {
+		
+		}
+		
+		public Student(Long id, String name, String email, LocalDate dob, int age) {
+			this.id = id;
+			this.name = name;
+			this.email = email;
+			this.dob = dob;
+			this.age = age;
+		}
+
+		public Student(Long id) {
+			this.id = id;
+		}
+
         public Long getId(){
             return id;
         }
@@ -26,6 +42,15 @@
         public int getAge(){
           return age;
         }
+		public void setAge(int age){
+			this.age = age;
+		}
+		public void setName(String name){
+			this.name = name;
+		}
+		public void setId(int id){
+			this.id = id;
+		}
     }
     ```
 
