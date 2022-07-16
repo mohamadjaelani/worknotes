@@ -6,7 +6,7 @@
    * Spring Data JPA
    * PostgreSQL Driver (this course use this type of db)
 ### 3. Create class Model
-	```
+	
 	public class Student{
 		private Long id;
 		private String name;
@@ -52,9 +52,9 @@
 			this.id = id;
 		}
 	}
-	```
+	
 ### 4. Create Controller
-	```
+	
 	import org.springframework.web.bind.annotation.GetMapping;
 	import org.springframework.web.bind.annotation.RequestMapping;
 	import org.springframework.web.bind.annotation.RestController;
@@ -83,9 +83,9 @@
 				));
 		}
 	}
-	```
+	
 ### 5. Create Service
-	```
+	
 	import org.springframework.stereotype.Component;
 	import java.time.LocalDate;
 	import java.time.Month;
@@ -103,4 +103,4 @@
 			));
 		}
 	}
-	```
+	
