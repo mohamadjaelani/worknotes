@@ -6,14 +6,14 @@
    * Spring Data JPA
    * PostgreSQL Driver (this course use this type of db)
 3. Create class Model
-    ```
-    public class Student{
-        private Long id;
-        private String name;
-        private String email;
-        private LocalDate dob;
-        private int age;
-        
+	```
+	public class Student{
+		private Long id;
+		private String name;
+		private String email;
+		private LocalDate dob;
+		private int age;
+		
 		public Student() {
 		
 		}
@@ -30,18 +30,18 @@
 			this.id = id;
 		}
 
-        public Long getId(){
-            return id;
-        }
-        public String getName(){
-            return name;
-        }
-        public String getEmail(){
-            return email;
-        }
-        public int getAge(){
-          return age;
-        }
+		public Long getId(){
+			return id;
+		}
+		public String getName(){
+			return name;
+		}
+		public String getEmail(){
+			return email;
+		}
+		public int getAge(){
+		  return age;
+		}
 		public void setAge(int age){
 			this.age = age;
 		}
@@ -51,6 +51,6 @@
 		public void setId(int id){
 			this.id = id;
 		}
-    }
-    ```
+	}
+	```
 
