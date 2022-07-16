@@ -1,11 +1,11 @@
 ## FLows how to build an apps using spring boot
 
-1. Accessing https://start.spring.io/ to create project starter
-2. Add dependencies 
+### 1. Accessing https://start.spring.io/ to create project starter
+### 2. Add dependencies 
    * Spring Web
    * Spring Data JPA
    * PostgreSQL Driver (this course use this type of db)
-3. Create class Model
+### 3. Create class Model
 	```
 	public class Student{
 		private Long id;
@@ -53,7 +53,7 @@
 		}
 	}
 	```
-4. Create Controller
+### 4. Create Controller
 	```
 	import org.springframework.web.bind.annotation.GetMapping;
 	import org.springframework.web.bind.annotation.RequestMapping;
@@ -68,7 +68,7 @@
 	
 		private final StudentService studentService;
 		
-		@Autowired
+		@Autowired  // injected @Service into this class
 		public StudentController(StudentService studentService) {
 			this.studentService = studentService;
 		}
@@ -84,14 +84,14 @@
 		}
 	}
 	```
-5. Create Service
+### 5. Create Service
 	```
 	import org.springframework.stereotype.Component;
 	import java.time.LocalDate;
 	import java.time.Month;
 	import java.util.List;
 
-	@Service
+	@Service  // this @Service notation will be known at @ autowired in cotroller
 	public class StudentService {
 		public List<Student> getStudents(){
 			return List.of(new Student(
