@@ -1,6 +1,6 @@
 ## FLows how to build an apps using spring boot
 
-1. https://start.spring.io/
+1. Accessing https://start.spring.io/ to create boilerplate
 2. Add dependencies 
    * Spring Web
    * Spring Data JPA
