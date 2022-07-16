@@ -91,7 +91,7 @@
 	import java.time.Month;
 	import java.util.List;
 
-	@Component
+	@Service
 	public class StudentService {
 		public List<Student> getStudents(){
 			return List.of(new Student(
