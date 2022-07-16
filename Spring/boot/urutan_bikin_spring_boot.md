@@ -62,18 +62,18 @@
 	import java.time.Month;
 	import java.util.List;
 
-@RestController
-@RequestMapping(path = "api/v1/student")
-public class StudentController {
-	@GetMapping
-	public List<Student> getStudents(){
-		return List.of(new Student(
+	@RestController
+	@RequestMapping(path = "api/v1/student")
+	public class StudentController {
+		@GetMapping
+		public List<Student> getStudents(){
+			return List.of(new Student(
 				1L,
 				"Jaelani",
 				"j43lani@gmail.com",
 				LocalDate.of(1990, Month.APRIL,15),
 				30
 				));
+		}
 	}
-}
 	```
