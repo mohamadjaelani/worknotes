@@ -122,7 +122,7 @@
 	@Table
 	public class Student{
 		@Id
-    		@SequenceGenerator(
+		@SequenceGenerator(
 			name = "student_sequence",
 			sequenceName = "student_sequence",
 			allocationSize = 1
