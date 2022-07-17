@@ -147,8 +147,39 @@
 	    @Query("select s from Student s where s.email=?1")
 	    Optional<Student> findStudentByEmail(String email);
 	}
+
+### 9. Create Configuration (StudentConfig.class)
+	// add initial data record
+	import org.springframework.boot.CommandLineRunner;
+	import org.springframework.context.annotation.Bean;
+	import org.springframework.context.annotation.Configuration;
+	import java.time.LocalDate;
+	import java.time.Month;
+	import java.util.List;
+
+	@Configuration
+	public class StudentConfig {
+		@Bean
+		CommandLineRunner commandLineRunner(StudentRepository studentRepository){
+			return args ->{
+				Student jaelani = new Student(
+					"Jaelani",
+					"Jaelani@gmail.com",
+					LocalDate.of(2001, Month.APRIL,21)
+				);
+				Student jojot = new Student(
+					"Jojot",
+					"Jojot@gmail.com",
+					LocalDate.of(2005, Month.JANUARY,14)
+				);
+				studentRepository.saveAll(
+					List.of(jaelani,jojot)
+				);
+			};
+		}
+	}
 	
-### 9. Back to step #5 (Creating Service)
+### 10. Back to step #5 (Creating Service)
 	modify the StudentService class in order to have some database service
 	.....
 	@Service  // this @Service notation will be known at @ autowired in cotroller
