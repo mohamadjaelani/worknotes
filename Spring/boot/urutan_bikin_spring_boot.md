@@ -12,18 +12,21 @@
 		private String name;
 		private String email;
 		private LocalDate dob;
+		@Transient
+		// this mean that age doesn't need to put on table (column) and it will be generated based on dob
 		private int age;
 		
 		public Student() {
 		
 		}
 		
-		public Student(Long id, String name, String email, LocalDate dob, int age) {
+	//	public Student(Long id, String name, String email, LocalDate dob, int age) {
+		public Student(Long id, String name, String email, LocalDate dob) {
 			this.id = id;
 			this.name = name;
 			this.email = email;
 			this.dob = dob;
-			this.age = age;
+		//	this.age = age;
 		}
 
 		public Student(Long id) {
@@ -39,12 +42,12 @@
 		public String getEmail(){
 			return email;
 		}
-		public int getAge(){
+		/*public int getAge(){
 		  return age;
-		}
-		public void setAge(int age){
+		}*/
+		/*public void setAge(int age){
 			this.age = age;
-		}
+		}*/
 		public void setName(String name){
 			this.name = name;
 		}
