@@ -3,7 +3,7 @@
 ### 1. Accessing https://start.spring.io/ to create project starter
 ### 2. Add dependencies 
    * Spring Web
-   * Spring Data JPA
+   * Spring Data JPA (if use database)
    * PostgreSQL Driver (this course use this type of db)
 ### 3. Create class Model
 	
@@ -103,4 +103,6 @@
 			));
 		}
 	}
+	
+### 5. Create File Properties (for db connection)
 	
