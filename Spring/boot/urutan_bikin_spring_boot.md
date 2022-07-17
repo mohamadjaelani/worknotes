@@ -115,3 +115,23 @@
 	spring.jpa.properties.hibernate.format_sql=true
 	server.error.include-message=always
 	
+### 7. Back to step #3 (Model)
+	add notation and some confugration to make the model as a table
+	```
+	@Entity // untuk hibernate
+	@Table
+	public class Student{
+		@Id
+    		@SequenceGenerator(
+			name = "student_sequence",
+			sequenceName = "student_sequence",
+			allocationSize = 1
+		)
+		@GeneratedValue(
+			strategy=GenerationType.SEQUENCE,
+			generator="student_sequence"
+		)
+		private Long id;
+		private String name;
+		.....
+	```
