@@ -42,9 +42,9 @@
 		public String getEmail(){
 			return email;
 		}
-		/*public int getAge(){
-		  return age;
-		}*/
+		public int getAge(){
+		  return Period.between(this.dob,LocalDate.now()).getYears();
+		}
 		/*public void setAge(int age){
 			this.age = age;
 		}*/
