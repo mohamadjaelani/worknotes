@@ -104,5 +104,14 @@
 		}
 	}
 	
-### 6. Create File Properties (for db connection)
+### 6. Configure Application.properties file (for db connection)
+	//located at resource package
+	spring.datasource.url=jdbc:postgresql://localhost:5432/student
+	spring.datasource.username=latihan
+	spring.datasource.password=Asdf0987
+	spring.jpa.hibernate.ddl-auto=create-drop
+	spring.jpa.show-sql=true
+	spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+	spring.jpa.properties.hibernate.format_sql=true
+	server.error.include-message=always
 	
