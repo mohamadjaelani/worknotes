@@ -104,5 +104,5 @@
 		}
 	}
 	
-### 5. Create File Properties (for db connection)
+### 6. Create File Properties (for db connection)
 	
