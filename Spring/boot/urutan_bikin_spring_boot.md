@@ -135,3 +135,58 @@
 		private String name;
 		.....
 	```
+### 8. Create an Interface class for Database Repository
+	import org.springframework.data.jpa.repository.JpaRepository;
+	import org.springframework.data.jpa.repository.Query;
+	import org.springframework.stereotype.Repository;
+
+	import java.util.Optional;
+
+	@Repository
+	public interface StudentRepository extends JpaRepository<Student,Long> {
+	    @Query("select s from Student s where s.email=?1")
+	    Optional<Student> findStudentByEmail(String email);
+	}
+	
+### 9. Back to step #5 (Creating Service)
+	modify the StudentService class in order to have some database service
+	.....
+	@Service  // this @Service notation will be known at @ autowired in cotroller
+	public class StudentService {
+		private final StudentRepository studentRepository;
+
+		@Autowired
+		public StudentService(StudentRepository studentRepository) {
+			this.studentRepository = studentRepository;
+		}
+		public List<Student> getStudents(){
+			return studentRepository.findAll();
+		}
+
+		public void addNewStudent(Student student) {
+			Optional<Student> studentByEmail = studentRepository.findStudentByEmail(student.getEmail());
+			if(studentByEmail.isPresent())
+				throw new IllegalStateException("email sudah ada");
+			studentRepository.save(student);
+		}
+
+		public void deleteStudent(Long id) {
+			boolean b = studentRepository.existsById(id);
+			if(!b)
+				throw new IllegalStateException("Student with "+id+" not found");
+			studentRepository.deleteById(id);
+		}
+		
+		@Transactional
+		public void updateStudent(Long id, String name, String email) {
+			Student student = studentRepository.findById(id).orElseThrow(()->new IllegalStateException("Student id "+id+" not found"));
+			if(name != null && name.length()>0 && !Objects.equals(student.getName(), name))
+				student.setName(name);
+			if(email != null && email.length()>0 && !Objects.equals(student.getEmail(),email)){
+				Optional optional = studentRepository.findStudentByEmail(email);
+				if(optional.isPresent())
+					throw new IllegalStateException("Email sudah ada yang pake");
+				student.setEmail(email);
+			}
+		}
+	......
