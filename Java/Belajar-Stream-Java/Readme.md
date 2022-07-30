@@ -18,4 +18,16 @@
   if use ```ignoreCaseSensitive``` the results will be
   
         [Jaelani, Indra, Fahmi]
-    
+  #### other example
+        public static void main(String[] args){
+                Integer[] a = {5,2,3,2,4,5,4,3,1,2,6};
+                List<Integer> lst = Arrays.asList(a);
+                List<Integer> lstR = lst.stream().distinct().collect(Collectors.toList());
+                System.out.println(lstR);
+                // would be printed [5, 2, 3, 4, 1, 6]
+                // the if want to sort
+                lstR = lstR.stream().sorted().collect(Collectors.toList());
+                System.out.println(lstR);
+                // would be printed [1, 2, 3, 4, 5, 6]
+        }
+        
