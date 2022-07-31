@@ -44,6 +44,7 @@ if emulator appear then ready for development.
 	dJbW^KfwDkNjsDiq&qTM
 
 on metro.config.js replace the code using below code
+
 	const { getDefaultConfig } = require("expo/metro-config");
 
 	module.exports = (() => {
