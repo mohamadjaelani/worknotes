@@ -62,6 +62,7 @@ then ```metro.config.js``` paste with code below
 	module.exports = config;
 then run ```npx react-native start``` again
 ### 7. On right side of the terminal execute code below to Start the application
+get name of the emulator using ```C:\Users\aina\AppData\Local\Android\Sdk\emulator\emulator -list-avds``` on my computer i have ```Pixel_2_API_30``` emulator names. then run the emulator ```C:\Users\aina\AppData\Local\Android\Sdk\emulator\emulator -avd Pixel_2_API_30``` after the emulator fully loaded then run the React-Native project on emulator using below code
 	npx react-native run-android
 
 if emulator appear then ready for development.
