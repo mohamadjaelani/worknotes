@@ -63,3 +63,4 @@ on metro.config.js replace the code using below code
 	})();
 ### 13. Create Directory ```src``` then create subdirectory ```assest, components, router, pages``` respectively
 ### 14. Move ```APP.js```file into src
+### 15. Install ```ES7 React/Redux/GraphQL/React-Native-Snippets``` extension
