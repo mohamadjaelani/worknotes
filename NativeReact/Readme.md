@@ -26,6 +26,41 @@
 	To open developer menu press "d"
 
 keep terminal/cmd open. then split terminal/cmd
+if ```error Cannot find module 'expo/metro-config'``` raise then create file ```metro-exotic-transformer.js``` and paste code below
+
+	const { createExoticTransformer } = require('@expo/metro-config/transformer');
+	module.exports = createExoticTransformer({
+	  transpileModules: ['@stripe/stripe-react-native'],
+	  // You can uncomment the following lines to add any extra node_modules paths in a monorepo:
+	  //   nodeModulesPaths: [
+	  //     'node_modules',
+	  //     // Generally you'll add this when your config is in `apps/my-app/metro.config.js`
+	  //     '../../node_modules',
+	  //     // If you have custom packages in a `packages/` folder
+	  //     '../../packages',
+	  //   ],
+	});
+
+then ```metro.config.js``` paste with code below
+
+	const { getDefaultConfig } = require('@expo/metro-config');
+	const config = getDefaultConfig(__dirname, {
+	  // Initialize in exotic mode.
+	  // If you want to preserve `react-native` resolver main field, and omit cjs support, then leave this undefined
+	  // and skip setting the `EXPO_USE_EXOTIC` environment variable.
+	  mode: 'exotic',
+	});
+
+	// Use the new transformer
+	config.transformer.babelTransformerPath = require.resolve('./metro-exotic-transformer');
+
+	// Optionally, you can add support for the `react-native` resolver field back
+	// doing this will increase bundling time and size as many community packages ship untransformed code using this feature.
+	// Other packages like `nanoid` use the field to support `react-native` so you may need to enable it regardless.
+	// defaultConfig.resolver.resolverMainFields.unshift('react-native');
+
+	module.exports = config;
+then run ```npx react-native start``` again
 ### 7. On right side of the terminal execute code below to Start the application
 	npx react-native run-android
 
