@@ -116,6 +116,7 @@ on metro.config.js replace the code using below code
 	import { NavigationContainer } from '@react-navigation/native';
 	import { createNativeStackNavigator } from '@react-navigation/native-stack';
 add in ```APP.js``` file just like below
+
 	import React from "react";
 	import { StyleSheet, Text, View } from "react-native";
 	import { NavigationContainer } from '@react-navigation/native';
