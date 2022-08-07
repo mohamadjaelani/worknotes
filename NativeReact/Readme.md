@@ -112,20 +112,28 @@ on metro.config.js replace the code using below code
 	export default App
 
 	const style = StyleSheet.create({})
-### 17. accessing ```https://reactnavigation.org/docs/hello-react-navigation``` then copy below code
-	import { NavigationContainer } from '@react-navigation/native';
-	import { createNativeStackNavigator } from '@react-navigation/native-stack';
-add in ```APP.js``` file just like below
-
+### 17. accessing ```https://reactnavigation.org/docs/hello-react-navigation``` then copy some code from it then the APP.js file it should be like below
 	import React from "react";
 	import { StyleSheet, Text, View } from "react-native";
 	import { NavigationContainer } from '@react-navigation/native';
 	import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+	function HomeScreen() {
+	  return (
+	    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+	      <Text>Home Screen</Text>
+	    </View>
+	  );
+	}
+
+	const Stack = createNativeStackNavigator();
 	const App = () => {
 	  return (
-	    <View>
-	      <Text>Hello kamu</Text>
-	    </View>
+	    <NavigationContainer>
+	      <Stack.Navigator>
+		<Stack.Screen name="Home" component={HomeScreen} />
+	      </Stack.Navigator>
+	    </NavigationContainer>
 	  )
 	}
 
