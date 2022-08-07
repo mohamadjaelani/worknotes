@@ -97,3 +97,37 @@ on metro.config.js replace the code using below code
 ### 13. Create Directory ```src``` then create subdirectory ```assest, components, router, pages``` respectively
 ### 14. Move ```APP.js```file into src
 ### 15. Install ```ES7 React/Redux/GraphQL/React-Native-Snippets``` extension
+### 16. Open ```APP.js``` file then paste below code
+	import React from "react";
+	import { StyleSheet, Text, View } from "react-native";
+
+	const App = () => {
+	  return (
+	    <View>
+	      <Text>Hello kamu</Text>
+	    </View>
+	  )
+	}
+
+	export default App
+
+	const style = StyleSheet.create({})
+### 17. accessing ```https://reactnavigation.org/docs/hello-react-navigation``` then copy below code
+	import { NavigationContainer } from '@react-navigation/native';
+	import { createNativeStackNavigator } from '@react-navigation/native-stack';
+add in ```APP.js``` file just like below
+	import React from "react";
+	import { StyleSheet, Text, View } from "react-native";
+	import { NavigationContainer } from '@react-navigation/native';
+	import { createNativeStackNavigator } from '@react-navigation/native-stack';
+	const App = () => {
+	  return (
+	    <View>
+	      <Text>Hello kamu</Text>
+	    </View>
+	  )
+	}
+
+	export default App
+
+	const style = StyleSheet.create({})
