@@ -1,4 +1,5 @@
 ## Create Certificate using Java keytool (keystore)
+C:\Program Files\Java\jre1.8.0_191\bin
 ### 1. Create Keypairs
       E:\LIBRARY\FILES\UNCAL\AS2\Certificate>keytool -genkey -alias uncal-sender -keyalg RSA -keystore hasil-keystore.jks
 ### 2. Extract public key from hasil-keystore.jks
