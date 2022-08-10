@@ -1,68 +1,10 @@
 ## Create Certificate using Java keytool (keystore)
 ### 1. Create Keypairs
       E:\LIBRARY\FILES\UNCAL\AS2\Certificate>keytool -genkey -alias uncal-sender -keyalg RSA -keystore hasil-keystore.jks
-      Enter keystore password:
-      Re-enter new password:
-      What is your first and last name?
-        [Unknown]:  Mohamad Jaelani
-      What is the name of your organizational unit?
-        [Unknown]:  Uncal-dt
-      What is the name of your organization?
-        [Unknown]:  CIC
-      What is the name of your City or Locality?
-        [Unknown]:  Bogor
-      What is the name of your State or Province?
-        [Unknown]:  Jawa Barat
-      What is the two-letter country code for this unit?
-        [Unknown]:  ID
-      Is CN=Mohamad Jaelani, OU=Uncal-dt, O=CIC, L=Bogor, ST=Jawa Barat, C=ID correct?
-        [no]:  y
-
-      Enter key password for <uncal-sender>
-              (RETURN if same as keystore password):
-
-      Warning:
-      The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore sender-keystore.jks -destkeystore sender-keystore.jks -deststoretype pkcs12".
-
 ### 2. Extract public key from hasil-keystore.jks
       E:\LIBRARY\FILES\UNCAL\AS2\Certificate>keytool -export -alias uncal-sender -keystore hasil-keystore.jks -file hasil-trust.crt
-      Enter keystore password:
-      Certificate stored in file <sender-trust.crt>
-
-      Warning:
-      The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore sender-keystore.jks -destkeystore sender-keystore.jks -deststoretype pkcs12".
-
 ### 3. Import Public key into hasil-keystore.jks
       E:\LIBRARY\FILES\UNCAL\AS2\Certificate>keytool -import -alias uncal-receiver-public -keystore hasil-keystore.jks -file receiver-trust.crt
-      Enter keystore password:
-      Owner: CN=Mang Jojot, OU=Uncal-dt, O=CIC, L=Bogor, ST=Jawa Barat, C=ID
-      Issuer: CN=Mang Jojot, OU=Uncal-dt, O=CIC, L=Bogor, ST=Jawa Barat, C=ID
-      Serial number: 644a07ad
-      Valid from: Mon Oct 19 10:36:57 ICT 2020 until: Sun Jan 17 10:36:57 ICT 2021
-      Certificate fingerprints:
-               MD5:  6E:86:C0:E7:61:DF:8A:BF:08:E1:D8:E8:BF:08:1D:F0
-               SHA1: 5A:5D:02:6E:95:8C:37:70:71:79:7D:AC:CA:6F:93:CC:07:06:49:35
-               SHA256: 50:78:29:67:46:3A:5B:E6:A6:1D:C9:F0:70:AB:E9:8A:EE:4D:3B:83:C9:6F:5F:9E:FA:12:05:FB:B2:43:65:AE
-      Signature algorithm name: SHA256withRSA
-      Subject Public Key Algorithm: 2048-bit RSA key
-      Version: 3
-
-      Extensions:
-
-      #1: ObjectId: 2.5.29.14 Criticality=false
-      SubjectKeyIdentifier [
-      KeyIdentifier [
-      0000: 45 0D FA B8 73 13 69 F2   84 28 05 00 7C 8C BE 39  E...s.i..(.....9
-      0010: F3 B4 90 6F                                        ...o
-      ]
-      ]
-
-      Trust this certificate? [no]:  y
-      Certificate was added to keystore
-
-      Warning:
-      The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore sender-keystore.jks -destkeystore sender-keystore.jks -deststoretype pkcs12".
-
 ### Tambahan/catatan ajah
       ========================================================================================================================================================
       keytool -genkey -keyalg RSA -alias uncal -keystore keystore.jks -storepass test1234 -validity 360 -keysize 2048
