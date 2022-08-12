@@ -14,3 +14,7 @@ then windows backslash (```\```) must have an escape char. Change it like below:
 
       org.gradle.java.home="C:\\Program Files\\Java\\jdk-15.0.1"
       sdk.dir=C:\\Users\\user\\AppData\\Local\\Android\\Sdk
+## warn Failed to connect to development server using “adb reverse”: spawnSync adb ENOENT
+Add Enviroment variable for android studio SDK
+go to Control panel -> Users > Change my environment variables
+Add "ANDROID_HOME" with value of SDK path ex: ```c:/Users/Nama_User/AppData/Local/Android/Sdk```
