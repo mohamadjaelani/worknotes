@@ -1,5 +1,5 @@
 #### Asymetric Encryption : Encrypt message using PublicKey and Decrypt Message using Private key mean while Sign the message using PrivateKey and to verify using PublicKey
-#### Certificate is a public key that already add subject mostly name of a domain
+#### Certificate is a public key that already add subject name mostly name of a domain or server's name
 #### 1. Verify if OpenSSH Client is Installed
     1. Open the Settings panel, then click Apps.
     2. Under the Apps and Features heading, click Optional Features.
