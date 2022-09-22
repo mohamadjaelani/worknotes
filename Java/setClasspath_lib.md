@@ -7,11 +7,11 @@
 ```com.coba.o.main.CobaMain``` is a class with ```main(String[] args)``` method that will be running
 
 ### change class path of java lib on manifest file
-open/extract executeable jar file then open ```MANIFEST``` file on ```META-INF``` directory on jar.\
+open/extract executeable jar file then open ```MANIFEST``` file on ```META-INF``` directory in jar.\
 ```MANIFEST``` file content consist of :
       
       Manifest-Version: 1.0
       Class-Path: . lib/json-20180130.jar
       Main-Class: com.coba.o.main.CobaMain
 
-then change the ```Class-Path``` according to directory of library
+then change the ```Class-Path``` according to directory of library, then replace ```MANIFEST``` file on ```META-INF``` directory in jar.
