@@ -7,4 +7,14 @@
     - add @EnableJpaAuditing (for JDBC)
     - add @EnableRedisRepositories (for Redis)
 ### 6. Create Entity class for table creations
-    
+    @Data  // automatic getter and setter by Lombok
+    @Entity // bikin table
+    public class Account {
+        @Id
+        @GeneratedValue
+        private Long id;
+        @Column(nullable = false)
+        private String email;
+        @Column(nullable = false)
+        private String password;
+    }
