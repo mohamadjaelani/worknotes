@@ -18,3 +18,18 @@
         @Column(nullable = false)
         private String password;
     }
+### 7. Create Controller
+    @Log4j2
+    @RestController
+    public class AccountController {
+
+        private final AccountService accountService;
+        public AccountController(AccountService accountService) {
+            this.accountService = accountService;
+        }
+        @PostMapping("/check")
+        public ResponseEntity<?> registerCheck(@RequestBody RegisterCheckDto registerCheckDto){
+            log.debug("register{}",registerCheckDto);
+            return accountService.registerCheck(registerCheckDto);
+        }
+    }
