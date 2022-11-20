@@ -2,7 +2,7 @@ spring:
   application:
     name: Springboot-Multi-Environment
   profiles:
-    active: production
+    active: production #set here to activate configuration
 server:
   port: 8080
   servlet:
@@ -18,7 +18,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/dev_1_db
     username: postgres
-    password: Asdf0987
+    password: ********
 ---
 # Staging configurations
 
@@ -29,7 +29,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/staging_1_db
     username: postgres
-    password: Asdf0987
+    password: ********
 ---
 #Production configurations
 
@@ -40,4 +40,4 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/prod_1_db
     username: postgres
-    password: Asdf0987
+    password: ********
