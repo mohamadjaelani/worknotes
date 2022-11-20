@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: Springboot-Multi-Environment
+  profiles:
+    active: production
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+---
+#Development configurations
+
+spring:
+  config:
+    active:
+      on-profile: development
+  datasource:
+    url: jdbc:postgresql://localhost:5432/dev_1_db
+    username: postgres
+    password: Asdf0987
+---
+# Staging configurations
+
+spring:
+  config:
+    active:
+      on-profile: staging
+  datasource:
+    url: jdbc:postgresql://localhost:5432/staging_1_db
+    username: postgres
+    password: Asdf0987
+---
+#Production configurations
+
+spring:
+  config:
+    active:
+      on-profile: production
+  datasource:
+    url: jdbc:postgresql://localhost:5432/prod_1_db
+    username: postgres
+    password: Asdf0987
